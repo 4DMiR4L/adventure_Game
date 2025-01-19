@@ -1,6 +1,8 @@
 package Player;
 
-public abstract  class Player {
+import java.util.Scanner;
+
+public abstract class Player {
     private int id;
     private String name;
     private int damage;
@@ -21,51 +23,57 @@ public abstract  class Player {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public String getName() {
         return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public int getDamage() {
         return damage;
     }
 
-    public void setDamage(int damage) {
-        this.damage = damage;
-    }
-
     public int getHealth() {
         return health;
-    }
-
-    public void setHealth(int health) {
-        this.health = health;
     }
 
     public int getMoney() {
         return money;
     }
 
-    public void setMoney(int money) {
-        this.money = money;
+    public String getWeapon() {
+        return weapon;
     }
 
-    public void selectCharacter(){
+    public static Player selectCharacter() {
+        Scanner scanner = new Scanner(System.in);
+        Player[] characters = {
+                new Samurai(),
+                new Knight(),
+                new Archer()
+        };
+        System.out.println("Available Characters:");
+        for (Player character : characters) {
+            character.displayİnfo();
+        }
 
+        System.out.print("Choose your character by ID (1-3): ");
+        int choice = scanner.nextInt();
+        if (choice < 1 || choice > characters.length) {
+            System.out.println("Invalid choice! Please try again.");
+            return selectCharacter();
+        }
+        Player selectedCharacter = characters[choice - 1];
+        System.out.println("You have chosen: " + selectedCharacter.getName());
+        return selectedCharacter;
     }
 
-    public void displayİnfo(){
-        System.out.println("Id ="+ getId()+"Name ="+ getName()+"Damage ="+ getDamage()+"Health ="+ getHealth()+"Money ="+ getMoney());
-
+    public void displayİnfo() {
+        System.out.printf("ID: %d | Name: %s | Damage: %d | Health: %d | Money: %d | Weapon: %s%n",
+                id, name, damage, health, money, weapon);
     }
 
-
-
+    @Override
+    public String toString() {
+        return String.format("Player{id=%d, name='%s', damage=%d, health=%d, money=%d, weapon='%s'}",
+                id, name, damage, health, money, weapon);
+    }
 }

@@ -5,4 +5,8 @@ public class Archer extends Player {
         super(id, name, damage, health, money, weapon);
     }
 
+    public Archer(){
+        super(3, "Archer", 7, 6, 30, "Arrow");
+    }
+
 }
