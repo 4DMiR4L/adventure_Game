@@ -1,4 +1,7 @@
 package Locations;
 
-public class River {
+public class River extends Location {
+    public void fightBear() {
+
+    }
 }

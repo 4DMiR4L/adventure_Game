@@ -1,5 +1,7 @@
 package Locations;
 
-public class Forest {
+public class Forest extends Location {
+    public void fightVampire() {
 
+    }
 }

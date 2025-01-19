@@ -1,6 +1,6 @@
 package Locations;
 
-public class ToolStore {
+public class ToolStore extends Location {
     public void buy() {
 
     }
