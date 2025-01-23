@@ -6,6 +6,6 @@ public class Zombie extends Enemy{
         super(name, damage, health, loot);
     }
     public Zombie(){
-        super("zombie", 3, 114, "stone");
+        super("zombie", 3, 114, "food");
     }
 }

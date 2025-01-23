@@ -6,6 +6,6 @@ public class Vampire extends Enemy{
         super(name, damage, health, loot);
     }
     public Vampire() {
-        super("Vampire", 6, 16, "wood");
+        super("Vampire", 6, 16, "FireWood");
     }
 }
