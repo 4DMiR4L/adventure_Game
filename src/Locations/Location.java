@@ -12,7 +12,7 @@ public class Location {
         this.name = name;
     }
 
-    public boolean onLocation() {
-
-    }
+//    public boolean onLocation() {
+//
+//    }
 }
